@@ -8,11 +8,14 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class LoginController extends AbstractController
 {
-    #[Route('/login', name: 'app_login')]
-    public function index(): Response
+    #[Route('/api/login_check', name: 'app_login_check', methods : ["POST"])]
+    public function Login()
     {
-        return $this->render('login/index.html.twig', [
-            'controller_name' => 'LoginController',
-        ]);
+        
+    }
+    #[Route('/api/test', name: 'app_test')]
+    public function test(): Response
+    {
+        return new Response("Vous etes connéctés");
     }
 }
